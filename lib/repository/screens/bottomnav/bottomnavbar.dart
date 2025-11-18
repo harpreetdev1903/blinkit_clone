@@ -13,7 +13,7 @@ class Bottomnavbar extends StatefulWidget {
 }
 
 class _BottomnavbarState extends State<Bottomnavbar> {
-  int currentIndex = 0;
+  int currentIdx = 0;
 
   List<Widget> pages = [
     Homescreen(),
@@ -25,20 +25,31 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: currentIndex, children: pages),
+      body: IndexedStack(index: currentIdx, children: pages),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIdx,
+        onTap: (index) {
+          setState(() {
+            currentIdx = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Uihelper.CustomImage(img: "home 1.png"),
+            label: "Home",
           ),
           BottomNavigationBarItem(
             icon: Uihelper.CustomImage(img: "shopping-bag 1.png"),
+            label: "Caft",
           ),
           BottomNavigationBarItem(
             icon: Uihelper.CustomImage(img: "category 1.png"),
+            label: "Category",
           ),
           BottomNavigationBarItem(
             icon: Uihelper.CustomImage(img: "printer 1.png"),
+            label: "Print",
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:blinkit_clone/repository/screens/bottomnav/bottomnavbar.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,7 +68,14 @@ class Loginscreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0XFFE23744),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Bottomnavbar(),
+                              ),
+                            );
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
