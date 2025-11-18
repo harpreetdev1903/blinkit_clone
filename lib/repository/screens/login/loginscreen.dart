@@ -45,7 +45,7 @@ class Loginscreen extends StatelessWidget {
                     children: [
                       20.verticalSpace,
                       Uihelper.CustomText(
-                        text: "Harpreet",
+                        text: "Harpreet singh",
                         color: Colors.black,
                         fontWeight: FontWeight.normal,
                         fontsize: 14,
